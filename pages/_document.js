@@ -13,15 +13,16 @@ class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
-          <div
-            data-netlify-deploy-id={process.env.DEPLOY_URL}
-            data-netlify-site-id={process.env.SITE_ID}
-            data-netlify-context={process.env.CONTEXT}
-            data-vcs="github"
-            style={{ position: 'fixed' }}
-          >
-            <script async src="https://netlify-cdp-loader.netlify.app/netlify.js" />
-          </div>
+          {process.env.CONTEXT === 'deploy-preview' && 
+            <div
+              data-netlify-deploy-id={(process.env.DEPLOY_URL || '').match(/([0-9a-f]+)--/i)[1]}
+              data-netlify-site-id={process.env.SITE_ID}
+              data-vcs="github"
+              style={{ position: 'fixed' }}
+            >
+              <script async src="https://netlify-cdp-loader.netlify.app/netlify.js" />
+            </div>
+          }
         </body>
       </Html>
     )

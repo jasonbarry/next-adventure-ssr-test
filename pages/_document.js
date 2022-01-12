@@ -7,6 +7,7 @@ class MyDocument extends Document {
   // }
 
   render() {
+    console.log(process.env)
     return (
       <Html lang="en">
         <Head />

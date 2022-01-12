@@ -1,5 +1,7 @@
 import Document, { Head, Html, Main, NextScript } from 'next/document'
 
+console.log('_document', process.env)
+
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
     console.log('getInitialProps', process.env)

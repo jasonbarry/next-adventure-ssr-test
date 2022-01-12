@@ -19,6 +19,7 @@ class MyDocument extends Document {
           <NextScript />
           {process.env.CONTEXT === 'deploy-preview' && 
             <div
+              data-from-nextjs-document="true"
               data-netlify-deploy-id={(process.env.DEPLOY_URL || '').match(/([0-9a-f]+)--/i)[1]}
               data-netlify-site-id={process.env.SITE_ID}
               data-vcs="github"

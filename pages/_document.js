@@ -3,12 +3,6 @@ import Document, { Head, Html, Main, NextScript } from 'next/document'
 console.log('_document', process.env)
 
 class MyDocument extends Document {
-  static async getInitialProps(ctx) {
-    console.log('getInitialProps', process.env)
-    const initialProps = await Document.getInitialProps(ctx)
-    return { ...initialProps }
-  }
-
   render() {
     console.log('render', process.env)
     return (

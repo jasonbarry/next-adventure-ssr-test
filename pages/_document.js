@@ -2,12 +2,13 @@ import Document, { Head, Html, Main, NextScript } from 'next/document'
 
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
+    console.log('getInitialProps', process.env)
     const initialProps = await Document.getInitialProps(ctx)
     return { ...initialProps }
   }
 
   render() {
-    console.log(process.env)
+    console.log('render', process.env)
     return (
       <Html lang="en">
         <Head />
